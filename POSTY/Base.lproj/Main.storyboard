@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ug4-IM-FtS" detailTextLabel="HHS-1c-uKX" style="IBUITableViewCellStyleSubtitle" id="7ZM-0p-KNv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projectCell" textLabel="Ug4-IM-FtS" detailTextLabel="HHS-1c-uKX" style="IBUITableViewCellStyleSubtitle" id="7ZM-0p-KNv">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ZM-0p-KNv" id="ofK-Qy-JfR">
@@ -43,6 +43,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="d0A-ef-LkE" kind="show" id="9we-au-ksr"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -79,6 +82,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rda-ed-iF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="67.633928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="033-NR-fhr">
+            <objects>
+                <viewController id="d0A-ef-LkE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jBz-97-G6N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5er-1Q-Bmi">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="create a new project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1H-t2-nWj">
+                                <rect key="frame" x="20" y="113" width="374" height="37"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-oF-ZDv">
+                                <rect key="frame" x="20" y="308" width="53.5" height="24"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjy-an-rql">
+                                <rect key="frame" x="93.5" y="302" width="270.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFD-Od-0NC">
+                                <rect key="frame" x="172" y="570" width="70" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="post">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IL7-ab-pUR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vLq-oF-ZDv" firstAttribute="leading" secondItem="IL7-ab-pUR" secondAttribute="leading" constant="20" id="1cU-aF-Fzd"/>
+                            <constraint firstItem="q1H-t2-nWj" firstAttribute="top" secondItem="IL7-ab-pUR" secondAttribute="top" constant="25" id="69K-Sf-dRc"/>
+                            <constraint firstItem="5er-1Q-Bmi" firstAttribute="top" secondItem="vLq-oF-ZDv" secondAttribute="bottom" constant="8" id="EKo-XA-QrH"/>
+                            <constraint firstItem="IL7-ab-pUR" firstAttribute="trailing" secondItem="tjy-an-rql" secondAttribute="trailing" constant="50" id="Iuh-qb-dK1"/>
+                            <constraint firstItem="q1H-t2-nWj" firstAttribute="leading" secondItem="IL7-ab-pUR" secondAttribute="leading" constant="20" id="TLj-dQ-zir"/>
+                            <constraint firstItem="5er-1Q-Bmi" firstAttribute="centerX" secondItem="jBz-97-G6N" secondAttribute="centerX" id="TUw-DN-0qe"/>
+                            <constraint firstItem="rFD-Od-0NC" firstAttribute="firstBaseline" secondItem="5er-1Q-Bmi" secondAttribute="baseline" constant="38" symbolType="layoutAnchor" id="ZPJ-fE-SNf"/>
+                            <constraint firstItem="5er-1Q-Bmi" firstAttribute="centerY" secondItem="jBz-97-G6N" secondAttribute="centerY" id="fbH-uU-r1v"/>
+                            <constraint firstItem="tjy-an-rql" firstAttribute="leading" secondItem="vLq-oF-ZDv" secondAttribute="trailing" constant="20" id="mIr-Tq-csa"/>
+                            <constraint firstItem="rFD-Od-0NC" firstAttribute="centerX" secondItem="jBz-97-G6N" secondAttribute="centerX" id="sLg-ZC-6br"/>
+                            <constraint firstItem="5er-1Q-Bmi" firstAttribute="top" secondItem="tjy-an-rql" secondAttribute="bottom" constant="4" id="y4b-GE-ZuA"/>
+                            <constraint firstItem="IL7-ab-pUR" firstAttribute="trailing" secondItem="q1H-t2-nWj" secondAttribute="trailing" constant="20" id="yd4-oM-Cc0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HH4-GM-tlP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgI-Sc-uZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="67.633928571428569"/>
         </scene>
     </scenes>
     <resources>
