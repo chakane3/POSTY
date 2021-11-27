@@ -17,6 +17,7 @@
 		940159EE27519F6600B0531C /* POSTYUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940159ED27519F6600B0531C /* POSTYUITests.swift */; };
 		940159F027519F6600B0531C /* POSTYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940159EF27519F6600B0531C /* POSTYUITestsLaunchTests.swift */; };
 		940159FD2751A0E300B0531C /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940159FC2751A0E300B0531C /* Projects.swift */; };
+		94015A012751BBC000B0531C /* secretKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94015A002751BBC000B0531C /* secretKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		940159ED27519F6600B0531C /* POSTYUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSTYUITests.swift; sourceTree = "<group>"; };
 		940159EF27519F6600B0531C /* POSTYUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSTYUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		940159FC2751A0E300B0531C /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = SOURCE_ROOT; };
+		94015A002751BBC000B0531C /* secretKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secretKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		940159CB27519F6400B0531C /* POSTY */ = {
 			isa = PBXGroup;
 			children = (
+				940159FF2751BBB100B0531C /* Secrets */,
 				940159CC27519F6400B0531C /* AppDelegate.swift */,
 				940159CE27519F6400B0531C /* SceneDelegate.swift */,
 				940159D027519F6400B0531C /* ViewController.swift */,
@@ -128,6 +131,14 @@
 				940159EF27519F6600B0531C /* POSTYUITestsLaunchTests.swift */,
 			);
 			path = POSTYUITests;
+			sourceTree = "<group>";
+		};
+		940159FF2751BBB100B0531C /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				94015A002751BBC000B0531C /* secretKey.swift */,
+			);
+			path = Secrets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 				940159CD27519F6400B0531C /* AppDelegate.swift in Sources */,
 				940159CF27519F6400B0531C /* SceneDelegate.swift in Sources */,
 				940159FD2751A0E300B0531C /* Projects.swift in Sources */,
+				94015A012751BBC000B0531C /* secretKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
