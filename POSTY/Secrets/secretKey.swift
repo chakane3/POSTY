@@ -9,5 +9,6 @@ import Foundation
 
 
 struct SecretKey {
-    let APIKey = ""
+    let APIKey = "keyzsAXGKbQWBZBda"
+    let addID = "appPySJxlJPSYRDit"
 }
