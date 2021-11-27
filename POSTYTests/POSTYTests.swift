@@ -10,22 +10,27 @@ import XCTest
 
 class POSTYTests: XCTestCase {
     
-    func testGetProjects() {
-        // Arrange
-        guard let jsonPath = Bundle.main.path(forResource: "AirtableSampleResource", ofType: "json"), let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
-            fatalError("Test JSON data not found")
-        }
+//    func testGetProjects() {
+//        // Arrange
+//        guard let jsonPath = Bundle.main.path(forResource: "AirtableSampleResource", ofType: "json"), let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
+//            fatalError("Test JSON data not found")
+//        }
+//
+//        // Act
+//        var projects = [Project]()
+//        do {
+//            projects = try Project.getProjects(from: jsonData)
+//        } catch {
+//            print(error)
+//        }
+//
+//        // Assert
+//        XCTAssertEqual(projects.count, 16, "Was expecting 16 projects, but found \(projects.count)")
+//    }
+    
+    func testNetworkCall() {
+        // arrange
         
-        // Act
-        var projects = [Project]()
-        do {
-            projects = try Project.getProjects(from: jsonData)
-        } catch {
-            print(error)
-        }
-        
-        // Assert
-        XCTAssertEqual(projects.count, 16, "Was expecting 16 projects, but found \(projects.count)")
     }
 
 }
