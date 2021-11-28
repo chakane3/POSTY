@@ -19,16 +19,30 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // configure the tableview here
+        projectsTableView.dataSource = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         // load data here
+        loadData()
     }
     
-    private func configureTableView() {
-        
+    private func loadData() {
+        ProjectAPIClient.manager.getProjects { result in
+            DispatchQueue.main.async { [weak self] in
+                switch result {
+                case let .success(projects):
+                    self?.projects = projects
+                case let .failure(error):
+                    self?.displayErrorAlert(with: error)
+                }
+            }
+        }
     }
     
     // UIActivityViewController

@@ -27,7 +27,7 @@ struct ProjectAPIClient {
     }
     
     private var airtableURL: URL {
-        guard let url = URL(string: "https://api.airtable.com/v0/appPySJxlJPSYRDit/Design%20projects?" + SecretKey.APIKey) else {
+        guard let url = URL(string: "https://api.airtable.com/v0/appPySJxlJPSYRDit/Design%20projects?api_key=" + SecretKey.APIKey) else {
             fatalError("Error: invald url")
         }
         return url
