@@ -43,9 +43,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="d0A-ef-LkE" kind="show" id="9we-au-ksr"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -59,7 +56,13 @@
                             <constraint firstItem="rCG-4t-Dca" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hUF-dJ-bub"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qzU-eG-CIz"/>
+                    <navigationItem key="navigationItem" id="qzU-eG-CIz">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle" catalog="system" id="dxS-GT-kAp">
+                            <connections>
+                                <segue destination="d0A-ef-LkE" kind="show" id="JYs-b4-qXB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="projectsTableView" destination="rCG-4t-Dca" id="lPG-Lc-2dv"/>
                     </connections>
@@ -86,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="67.633928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Create ProjectVC-->
         <scene sceneID="033-NR-fhr">
             <objects>
-                <viewController id="d0A-ef-LkE" sceneMemberID="viewController">
+                <viewController id="d0A-ef-LkE" customClass="CreateProjectVC" customModule="POSTY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jBz-97-G6N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +123,14 @@
                                 <buttonConfiguration key="configuration" style="plain" title="post">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="postNewProject:" destination="d0A-ef-LkE" eventType="touchUpInside" id="Huv-Ei-7DP"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KR1-eY-1Xv">
+                                <rect key="frame" x="197" y="575" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IL7-ab-pUR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -140,6 +150,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HH4-GM-tlP"/>
+                    <connections>
+                        <outlet property="datePicker" destination="5er-1Q-Bmi" id="BhL-ps-RAv"/>
+                        <outlet property="nameTextField" destination="tjy-an-rql" id="3dG-HX-aBK"/>
+                        <outlet property="postButton" destination="rFD-Od-0NC" id="dfU-ag-lNv"/>
+                        <outlet property="spinner" destination="KR1-eY-1Xv" id="Ohs-V4-YcU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgI-Sc-uZx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,6 +163,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
